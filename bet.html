@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第几手计算</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .input_box, .place_box {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .input_box > label {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+        .btn {
+            background-color: #3296fa;
+            color: #fff;
+            font-size: 20px;
+            width: 100%;
+            height: 50px;
+            border-radius: 5px;
+            margin-top: 20px;            
+            border: none;
+        }
+        .caption {
+            width: 80px;
+            display: inline-block;
+            color: #444;
+            font-weight: bold;
+        }
+        .input {
+            border-radius: 4px;
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            flex: 1;
+            height: 25px;
+        }
+
+        .place_bet {
+            margin-top: 10px;
+            background-color: #f5f5f5;
+            min-height: 200px;
+            padding: 10px 15px;
+            line-height: 30px;
+        }
+
+        .place_bet b {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="input_box">
+        <label>
+            <span class="caption">本金：</span>
+            <input class="input" name="F_AMT" placeholder='1000'/>
+        </label>
+        <label>
+            <span class="caption">起步：</span>
+            <input class="input" name="F_START" placeholder='除以 121 起步'/>
+        </label>
+        <label>
+            <span class="caption">已开几手：</span>
+            <input class="input" name="F_NUM" placeholder='2'/>
+        </label>
+        <button class="btn">计算</button>
+    </div>
+
+    <div class="place_box">
+        <h3>下注步骤</h3>
+        <div class="place_bet"></div>
+    </div>
+</body>
+<script>
+    function getElement (name) {
+        return document.querySelector(name)
+    }
+
+    let btn = getElement('.btn')
+    
+    btn.onclick = function () {
+        let place_box = getElement('.place_bet')
+        place_box.innerHTML = ''
+
+        let F_AMT = Number(getElement('input[name="F_AMT"]').value)
+        let F_START = Number(getElement('input[name="F_START"]').value)
+        let F_NUM = Number(getElement('input[name="F_NUM"]').value)
+
+        if (F_NUM >= 5) {
+            alert('只能计算 4 手以下')
+            return 
+        }
+
+        let result = []
+        let start_amt = F_AMT / F_START
+
+        // 没下注的金额
+        let amt_num = getAmtNum(start_amt, F_NUM)
+        let new_amt = F_AMT + amt_num
+
+        result = getPlaceBet(new_amt, F_START)
+
+        if (F_NUM === 4) {
+            setPlaceBetHtml([F_AMT])
+        } else {
+            setPlaceBetHtml(result.slice(F_NUM))
+        }
+    }
+
+    function setPlaceBetHtml (result) {
+        let place_box = getElement('.place_bet')
+        result.forEach((item, index) => {
+            let div = document.createElement('div')
+            div.innerHTML = `<div>第 ${index + 1} 手：<b>${item}</b></div>`
+            place_box.appendChild(div)
+        })
+    }
+
+    function getAmtNum (start, num) {
+        let start_amt = start
+        let result = []
+        let mu = 1
+        for (let i = 0; i < num; i++) {
+            result.push(start_amt * mu)
+            mu = mu * 3
+        }
+        return Math.round(sum(result))
+    }
+
+    function getPlaceBet (amt, start) {
+        let start_amt = Math.round(amt / start)
+        let result = []
+        let mu = 1
+        for (let i = 0; i < 5; i++) {
+            result.push(start_amt * mu)
+            mu = mu * 3
+        }
+        return result
+    }
+
+    function sum (arr) {
+        var len = arr.length
+        if (len === 0) {
+            return 0
+        } else if (len === 1){
+            return arr[0]
+        } else {
+            return arr[0] + sum(arr.slice(1))
+        }
+    }
+
+</script>
+</html>
