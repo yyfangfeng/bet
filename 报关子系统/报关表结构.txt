@@ -1,0 +1,579 @@
+DecHead 进口/出口报关单表头
+    F_AgentCode	申报单位代码	VARCHAR2(18)
+    F_AgentName	申报单位名称	VARCHAR2(70)
+    F_ApprNo	批准文号	VARCHAR2(32)
+    F_BillNo	提单号	VARCHAR2(32)
+    F_ContrNo	合同号	VARCHAR2(32)
+    F_CopCode	录入单位代码	VARCHAR2(9)
+    F_CopName	录入单位名称	VARCHAR2(70)
+    F_CustomMaster	主管海关（申报地海关）	VARCHAR2(4)
+    F_CutMode	征免性质	VARCHAR2(3)
+    F_DataSource	扩展字段	VARCHAR2(5)
+    F_DeclTrnRel	报关/转关关系标志	VARCHAR2(1)
+    F_DistinatePort	经停港/指运港	VARCHAR2(6)
+    F_EdiId	报关标志	VARCHAR2(1)
+    F_EntryId	海关编号	VARCHAR2(18)
+    F_EntryType	报关单类型	VARCHAR2(1)
+    F_FeeCurr	运费币制	VARCHAR2(3)
+    F_FeeMark	运费标记	VARCHAR2(1)
+    F_FeeRate	运费／率	NUMBER(19,5)
+    F_GrossWet	毛重	NUMBER(19,5)
+    F_IEDate	进出口日期	VARCHAR2(8)
+    F_IEFlag	进出口标志	VARCHAR2(1)
+    F_IEPort	进出境关别	VARCHAR2(4)
+    F_InputerName	录入员名称	VARCHAR2(32)
+    F_InsurCurr	保险费币制	VARCHAR2(3)
+    F_InsurMark	保险费标记	VARCHAR2(1)
+    F_InsurRate	保险费／率	NUMBER(19,5)
+    F_LicenseNo	许可证编号	VARCHAR2(20)
+    F_ManualNo	备案号	VARCHAR2(12)
+    F_NetWt	净重	NUMBER(19,5)
+    F_NoteS	备注    VARCHAR2(255)
+    F_OtherCurr	杂费币制	VARCHAR2(3)
+    F_OtherMark	杂费标志	VARCHAR2(1)
+    F_OtherRate	杂费／率	NUMBER(19,5)
+    F_OwnerCode	消费使用/生产销售单位代码	VARCHAR2(18)
+    F_OwnerName	消费使用/生产销售单位名称	VARCHAR2(70)
+    F_PackNo	件数	NUMBER(9)
+    F_PartenerID	申报人标识	VARCHAR2(20)
+    F_PDate	打印日期	VARCHAR2(8)
+    F_PreEntryId	预录入编号	VARCHAR2(9)
+    F_Risk	风险评估参数	VARCHAR2(10)
+    F_SeqNo	数据中心统一编号	VARCHAR2(18)
+    F_TgdNo	关联单据号	VARCHAR2(18)
+    F_TradeCountry	启运国/运抵国	VARCHAR2(3)
+    F_TradeMode	监管方式	VARCHAR2(4)
+    F_TradeCode	境内收发货人编号	VARCHAR2(18)
+    F_TrafMode	运输方式代码	VARCHAR2(1)
+    F_TrafName	运输工具代码及名称	VARCHAR2(50)
+    F_TradeName	境内收发货人名称	VARCHAR2(70)
+    F_TransMode	成交方式	VARCHAR2(1)
+    F_Type	单据类型	VARCHAR2(6)
+    F_TypistNo	录入员IC卡号	VARCHAR2(30)
+    F_WrapType	包装种类	VARCHAR2(2)
+    F_ChkSurety	担保验放标志	VARCHAR2(1)
+    F_BillType	备案清单类型	VARCHAR2(1)
+    F_CopCodeScc	录入单位统一编码	VARCHAR2(18)
+    F_TradeCoScc	收发货人统一编码	VARCHAR2 (18)
+    F_AgentCodeScc	申报代码统一编码	VARCHAR2 (18)
+    F_OwnerCodeScc	消费使用/生产销售单位单位统一编码	VARCHAR2 (18)
+    F_PromiseItmes	价格说明	VARCHAR2(32)
+    F_TradeAreaCode	贸易国别	VARCHAR2(3)
+    F_CheckFlow	查验分流	VARCHAR2(1)
+    F_TaxAaminMark	税收征管标记	VARCHAR2(1)
+    F_MarkNo	标记唛码	VARCHAR2(400)
+    F_DespPortCode	启运港代码	VARCHAR2(8)
+    F_EntyPortCode	入境口岸代码	VARCHAR2(8)
+    F_GoodsPlace	存放地点	VARCHAR2(100)
+    F_BLNo	B/L号	VARCHAR2(50)
+    F_InspOrgCode	口岸检验检疫机关	VARCHAR2(10)
+    F_SpecDeclFlag	特种业务标识	VARCHAR2(10)
+    F_PurpOrgCode	目的地检验检疫机关	VARCHAR2(10)
+    F_DespDate	启运日期 	VARCHAR2(8)
+    F_CmplDschrgDt	卸毕日期	VARCHAR2(8)
+    F_CorrelationReasonFlag	关联理由	VARCHAR2(2)
+    F_VsaOrgCode	领证机关	VARCHAR2(10)
+    F_OrigBoxFlag	原集装箱标识	VARCHAR2(1)
+    F_DeclareName	申报人员姓名	VARCHAR2(50)
+    F_NoOtherPack	无其他包装	VARCHAR2(1)
+    F_OrgCode	检验检疫受理机关	VARCHAR2(10)
+    F_OverseasConsignorCode	境外发货人代码	VARCHAR2(50)
+    F_OverseasConsignorCname	境外收发货人名称	VARCHAR2(150)
+    F_OverseasConsignorEname	境外发货人名称（外文）	VARCHAR2(100)
+    F_OverseasConsignorAddr	境外收发货人地址	VARCHAR2(100)
+    F_OverseasConsigneeCode	境外收货人编码	VARCHAR2(50)
+    F_OverseasConsigneeEname	境外收货人名称(外文)	VARCHAR2(400)
+    F_DomesticConsigneeEname	境内收发货人名称（外文）	VARCHAR2(400)
+    F_CorrelationNo	关联号码	VARCHAR2（500）
+    F_EdiRemark	EDI申报备注	VARCHAR2(128)
+    F_EdiRemark2	EDI申报备注2	VARCHAR2(128)
+    F_TradeCiqCode	境内收发货人检验检疫编码	VARCHAR2（10）
+    F_OwnerCiqCode	消费使用/生产销售单位检验检疫编码	VARCHAR2(10)
+    F_DeclCiqCode	申报单位检验检疫编码	VARCHAR2(10)
+
+
+
+DecList 进口/出口报关单表体
+    F_ClassMark	归类标志	VARCHAR2(1)
+    F_CodeTS	商品编号	VARCHAR2(10)
+    F_ContrItem	备案序号	NUMBER(19)
+    F_DeclPrice	申报单价	NUMBER(19,5)
+    F_DeclTotal	申报总价	NUMBER(19,5)
+    F_DutyMode	征免方式	VARCHAR2(1)
+    F_ExgNo	货号	VARCHAR2(30)
+    F_ExgVersion	版本号	NUMBER(8)
+    F_Factor	申报计量单位与法定单位比例因子	NUMBER(11,3)
+    F_FirstUnit	第一计量单位（法定单位）	VARCHAR2(3)
+    F_FirstQty	第一法定数量	NUMBER(19,5)
+    F_GUnit	成交计量单位	VARCHAR2(3)
+    F_GModel	商品规格、型号	VARCHAR2(255)
+    F_GName	商品名称	VARCHAR2(255)
+    F_GNo	商品序号	NUMBER(19)
+    F_GQty	成交数量	NUMBER(19,5)
+    F_OriginCountry	原产国	VARCHAR2(3)
+    F_SecondUnit	第二计量单位	VARCHAR2(3)
+    F_SecondQty	第二法定数量	NUMBER(19,5)
+    F_TradeCurr	成交币制	VARCHAR2(3)
+    F_UseTo	用途/生产厂家	VARCHAR2(2)
+    F_WorkUsd	工缴费	NUMBER(19,4)
+    F_DestinationCountry	最终目的国（地区） VARCHAR2(3)
+    F_CiqCode	检验检疫编码	VARCHAR2(20)
+    F_DeclGoodsEname	商品英文名称	VARCHAR2(100)
+    F_OrigPlaceCode	原产地区代码	VARCHAR2(50)
+    F_Purpose	用途代码	VARCHAR2(4)
+    F_ProdValidDt	产品有效期	VARCHAR2(20)
+    F_ProdQgp	产品保质期	VARCHAR2(20)
+    F_GoodsAttr	货物属性代码	VARCHAR2(20)
+    F_Stuff	成份/原料/组份	VARCHAR2(400)
+    F_Uncode	UN编码	VARCHAR2(20)
+    F_DangName	危险货物名称	VARCHAR2(80)
+    F_DangPackType	危包类别	VARCHAR2(4)
+    F_DangPackSpec	危包规格	VARCHAR2(24)
+    F_EngManEntCnm	境外生产企业名称	VARCHAR2(100)
+    F_NoDangFlag	非危险化学品	VARCHAR2(1)
+    F_DestCode	目的地代码	VARCHAR2(8)
+    F_GoodsSpec	检验检疫货物规格	VARCHAR2(2000)
+    F_GoodsModel	货物型号	VARCHAR2(2000)
+    F_GoodsBrand	货物品牌	VARCHAR2(2000)
+    F_ProduceDate	生产日期	VARCHAR2(2000)
+    F_ProdBatchNo	生产批号	VARCHAR2(2000)
+    F_DistrictCode	境内目的地/境内货源地	VARCHAR2(5)
+    F_CiqName	检验检疫名称	VARCHAR2(50)
+    F_MnufctrRegno	生产单位注册号	VARCHAR2(20)
+    F_MnufctrRegName	生产单位名称	VARCHAR2(150)
+    F_RcepOrigPlaceCode	优惠贸易协定项下原产地	VARCHAR2(3)
+
+
+DecContainer 报关单集装箱
+    F_ContainerId	集装箱号	VARCHAR2(32)
+    F_ContainerMd	集装箱规格	VARCHAR2(32)
+    F_GoodsNo	商品项号	VARCHAR2（255）
+    F_LclFlag	拼箱标识	VARCHAR2(1)
+    F_GoodsContaWt	箱货重量	NUMBER (19,5)
+    F_ContainerWt	自重	NUMBER (18,5)
+
+
+
+DecLicenseDocus 随附单证
+    F_DocuCode	单证代码	VARCHAR2(1)
+    F_CertCode	单证编号	VARCHAR2(32)
+
+
+
+DecRequestCert 申请单证信息表
+    F_AppCertCode	申请单证代码	VARCHAR2(50)
+    F_ApplOri	申请单证正本数	VARCHAR2(50)
+    F_ApplCopyQuan	申请单证副本数	VARCHAR2(50)
+
+
+
+DecGoodsLimit 许可证信息表
+    F_GoodsNo	商品序号	NUMBER（9）
+    F_LicTypeCode	许可证类别代码	VARCHAR2(5)
+    F_LicenceNo	许可证编号	VARCHAR2(40)
+    F_LicWrtofDetailNo	许可证核销明细序号	VARCHAR2(4)
+    F_LicWrtofQty	许可证核销数量	VARCHAR2(20)
+    F_LicWrtofQtyUnit	许可证核销数量单位	VARCHAR2(3)
+
+
+
+DecGoodsLimitVin 许可证VIN信息
+    F_LicenceNo	许可证编号	VARCHAR2(40)
+    F_LicTypeCode	许可证类别代码	VARCHAR2(5)
+    F_VinNo	VIN序号	VARCHAR2(100)
+    F_BillLadDate	提/运单日期	DATE
+    F_QualityQgp	质量保质期	VARCHAR2(100)
+    F_MotorNo	发动机号或电机号	VARCHAR2(100)
+    F_VinCode	车辆识别代码（VIN）	VARCHAR2(20)
+    F_ChassisNo	底盘(车架)号	VARCHAR2(20)
+    F_InvoiceNum	发票所列数量	NUMBER(19,5)
+    F_ProdCnnm	品名（中文名称）	VARCHAR2(500)
+    F_ProdEnnm	品名（英文名称）	VARCHAR2(500)
+    F_ModelEn	型号（英文）	VARCHAR2(500)
+    F_PricePerUnit	单价	VARCHAR2(20)
+    // F_InvoiceNo	发票号	VARCHAR2(30)
+
+
+
+DecOtherPack 其他包装信息表
+    F_PackQty	包装件数	NUMBER(19,5)
+    F_PackType	包装材料种类	VARCHAR2(2)
+
+
+
+DecCopLimit 企业资质信息表
+    F_EntQualifNo	企业资质编号	VARCHAR2(40)
+    F_EntQualifTypeCode	企业资质类别代码	VARCHAR2(5)
+
+
+
+DecUser 使用人信息表
+    F_UseOrgPersonCode	使用单位联系人	VARCHAR2(20)
+    F_UseOrgPersonTel	使用单位联系电话	VARCHAR2(20)
+
+
+
+DecMarkLob 标记号码附件表
+    F_AttachName	附件名称	VARCHAR2(80)
+    F_AttachType	附件类型	VARCHAR2(2)
+    F_Attachment	附件	BLOB
+
+
+
+DecFreeTxt 报关单自由文本信息
+    F_BonNo	监管仓号	VARCHAR2(32)
+    F_CusFie	货场代码	VARCHAR2(8)
+    F_DecBpNo	报关员联系方式	VARCHAR2(32)
+    F_DecNo	申报人员证号	VARCHAR2(13)
+    F_RelId	关联报关单号	VARCHAR2(18)
+    F_RelManNo	关联备案号	VARCHAR2(12)
+    F_VoyNo	航次号	VARCHAR2(32)
+
+
+
+DecSign 报关单签名
+    F_OperType	操作类型    VARCHAR2(1)
+    F_ICCode	操作员IC卡号	VARCHAR2(13)
+    F_OperName	操作员姓名	VARCHAR2(30)
+    F_CopCode	操作企业组织机构代码	VARCHAR2(18）
+    F_ClientSeqNo	客户端报关单编号	VARCHAR2(18)
+    F_Sign	数字签名信息	VARCHAR2(201)
+    F_SignDate	签名日期	Z(16)
+    F_HostId	客户端邮箱的HostId	VARCHAR2(10)
+    F_Certificate	操作员卡的证书号	VARCHAR2(20)
+    F_DomainId	签名人分类	VARCHAR2 (1)
+    F_Note	备注	VARCHAR2 (100)
+    F_BillSeqNo	对应清单统一编号	VARCHAR2 (18)
+
+
+
+TrnHead 进口/出口转关单表头
+    F_TrnPreId 	转关单统一编号	VARCHAR2(18)
+    F_TransNo 	载货清单号	VARCHAR2(16)
+    F_TurnNo                          	转关申报单号	VARCHAR2(16)        
+    F_NativeTrafMode	境内运输方式	VARCHAR2(1)
+    F_TrafCustomsNo	境内运输工具编号	VARCHAR2(13)
+    F_NativeShipName	境内运输工具名称	VARCHAR2(30)        
+    F_NativeVoyageNo	境内运输工具航次	VARCHAR2(32)
+    F_ContractorName	承运单位名称	VARCHAR2(70)      
+    F_ContractorCode	承运单位组织机构代码	VARCHAR2(10)        
+    F_TransFlag	转关类型	VARCHAR2(2)
+    F_ValidTime	预计运抵指运地时间	VARCHAR2(8)
+    F_ESealFlag	是否启用电子关锁标志	VARCHAR2(1)
+    F_Notes	备注	VARCHAR2(200)
+    F_TrnType	转关单类型	VARCHAR2(1)
+    F_ApplCodeScc 	转关申报单位统一代码	VARCHAR2(18)
+
+
+
+TrnList 进口/出口转关单表体(提单)
+    F_TrafMode	进出境运输方式	VARCHAR2(1)   
+    F_ShipId	进出境运输工具编号	VARCHAR2(32)   
+    F_ShipNameEn	进出境运输工具名称	VARCHAR2(255)
+    F_VoyageNo	进出境运输工具航次	VARCHAR2(32)     
+    F_BillNo	提单号	VARCHAR2(32)      
+    F_IEDate	实际进出境日期	VARCHAR2(8)
+
+
+
+TrnContainer 进口/出口提运单集装箱表
+    F_ContaNo	集装箱号	VARCHAR2(11)
+    F_ContaSn	集装箱序号	NUMBER(3)
+    F_ContaModel	集装箱规格	VARCHAR2(4)
+    F_SealNo	电子关锁号	VARCHAR2(128)
+    F_TransName	境内运输工具名称	VARCHAR2(32)
+    F_TransWeight	工具实际重量	NUMBER(19,5)
+    F_SealQty	关锁个数	VARCHAR2(4)
+
+
+
+TrnContaGoodsList 进口/出口提运单集装箱商品装配表
+    F_GNo	商品序号	NUMBER(9)
+    F_ContaNo	集装箱号	VARCHAR2(11)         
+    F_ContaGoodsCount	商品件数	NUMBER(9)
+    F_ContaGoodsWeight	商品重量	NUMBER(19,5)
+
+
+
+DecSupplement 补充申报单信息
+    F_GNo	补充申报单商品序号	Z (2)
+    F_SupType	补充申报单类型	X(1)
+    F_BrandCN	品牌中文	X(50)
+    F_BrandEN	品牌英文	X(100)
+    F_Buyer	买方名称	X(150)
+    F_BuyerContact	
+    F_买方联系人	X(50)
+    F_BuyerAddr	买方地址	X(255)
+    F_BuyerTel	买方电话	X(20)
+    F_Seller	卖方名称	X(150)
+    F_SellerContact	卖方联系人	X(50)
+    F_SellerAddr	卖方地址	X(255)
+    F_SellerTel	卖方电话	X(20)
+    F_Factory	生产厂商名称	X(150)
+    F_FactoryContact	生产厂商联系人	X(50)
+    F_FactoryAddr	生产厂商地址	X(255)
+    F_FactoryTel	生产厂商电话	X(20)
+    F_ContrNo	合同协议号	X(20)
+    F_ContrDate	签约日期	X(8)
+    F_InvoiceNo	发票编号	X(50)
+    F_InvoiceDate	发票日期	X(8)
+    F_I_BabRel	价格申报项，进口货物申报项	X(20)
+    F_I_PriceEffect	价格申报项，进口货物申报项	X(1)
+    F_I_PriceClose	价格申报项，进口货物申报项	X(20)
+    F_I_OtherLimited	价格申报项，进口货物申报项	X(1)
+    F_I_OtherEffect	价格申报项，进口货物申报项	X(1)
+    F_I_Note1	价格申报项，进口货物申报项	X(255)
+    F_I_IsUsefee	价格申报项，进口货物申报项。	X(1)
+    F_I_IsProfit	价格申报项，进口货物申报项	X(1)
+    F_I_Note2	价格申报项，进口货物申报项	X(255)
+    F_Curr	价格申报项，币制	X(3)
+    F_InvoicePrice	价格申报项，发票价格单位金额	Z(19).Z(4)
+    F_InvoiceAmount	价格申报项，发票价格总金额	Z(19).Z(2)
+    F_InvoiceNote	价格申报项，发票价格备注	X(255)
+    F_GoodsPrice	价格申报项，间接支付/收取的货款单位金额，进口是间接支付，出口是间接收取	Z(19).Z(4)
+    F_GoodsAmount	价格申报项，间接支付/收取的货款总金额，进口是间接支付，出口是间接收取	Z(19).Z(2)
+    F_GoodsNote	价格申报项，间接支付/收取的货款备注，进口是间接支付，出口是间接收取	X(255)
+    F_I_CommissionPrice	价格申报项，进口货物除购货佣金以外的佣金和经纪费单位金额	Z(19).Z(4)
+    F_I_CommissionAmount	价格申报项，进口货物除购货佣金以外的佣金和经纪费总金额	Z(19).Z(2)
+    F_I_CommissionNote	价格申报项，进口货物除购货佣金以外的佣金和经纪费备注	X(255)
+    F_I_ContainerPrice	价格申报项，与该进口货物视为一体的容器费用单位金额	Z(19).Z(4)
+    F_I_ContainerAmount	价格申报项，与该进口货物视为一体的容器费用总金额	Z(19).Z(2)
+    F_I_ContainerNote	价格申报项，与该进口货物视为一体的容器费用备注	X(255)
+    F_I_PackPrice	价格申报项，进口货物包装材料和包装劳务费用单位金额	Z(19).Z(4)
+    F_I_PackAmount	价格申报项，进口货物包装材料和包装劳务费用总金额	Z(19).Z(2)
+    F_I_PackNote	价格申报项，进口货物包装材料和包装劳务费用备注	X(255)
+    F_I_PartPrice	价格申报项，进口货物包含的材料、部件、零件和类似货物单位金额	Z(19).Z(4)
+    F_I_PartAmount	价格申报项，进口货物包含的材料、部件、零件和类似货物总金额	Z(19).Z(2)
+    F_I_PartNote	价格申报项，进口货物包含的材料、部件、零件和类似货物备注	X(255)
+    F_I_ToolPrice	价格申报项，在生产进口货物过程中使用的工具、模具和类似货物单位金额	Z(19).Z(4)
+    F_I_ToolAmount	价格申报项，在生产进口货物过程中使用的工具、模具和类似货物总金额	Z(19).Z(2)
+    F_I_ToolNote	价格申报项，在生产进口货物过程中使用的工具、模具和类似货物备注	X(255)
+    F_I_LossPrice	价格申报项，在生产进口货物过程中消耗的材料单位金额	Z(19).Z(4)
+    F_I_LossAmount	价格申报项，在生产进口货物过程中消耗的材料总金额	Z(19).Z(2)
+    F_I_LossNote	价格申报项，在生产进口货物过程中消耗的材料备注	X(255)
+    F_I_DesignPrice	价格申报项，进口货物在境外进行的为生产进口货物所需的工程设计、技术研发、工艺及制图等相关服务单位金额	Z(19).Z(4)
+    F_I_DesignAmount	价格申报项，进口货物在境外进行的为生产进口货物所需的工程设计、技术研发、工艺及制图等相关服务总金额	Z(19).Z(2)
+    F_I_DesignNote	价格申报项，进口货物在境外进行的为生产进口货物所需的工程设计、技术研发、工艺及制图等相关服务备注	X(255)
+    F_I_UsefeePrice	价格申报项，特许权使用费单位金额	Z(19).Z(4)
+    F_I_UsefeeAmount	价格申报项，特许权使用费总金额	Z(19).Z(2)
+    F_I_UsefeeNote	价格申报项，特许权使用费备注	X(255)
+    F_I_ProfitPrice	价格申报项，卖方直接或间接从买方对货物进口后转售、处置或使用所得中获得的收益单位金额	Z(19).Z(4)
+    F_I_ProfitAmount	价格申报项，卖方直接或间接从买方对货物进口后转售、处置或使用所得中获得的收益总金额	Z(19).Z(2)
+    F_I_ProfitNote	价格申报项，卖方直接或间接从买方对货物进口后转售、处置或使用所得中获得的收益备注	X(255)
+    F_I_FeePrice	价格申报项，进口货物运输费用单位金额	Z(19).Z(4)
+    F_I_FeeAmount	价格申报项，进口货物运输费用总金额	Z(19).Z(2)
+    F_I_FeeNote	价格申报项，进口货物运输费用备注	X(255)
+    F_I_OtherPrice	价格申报项，进口货物运输相关费用单位金额	Z(19).Z(4)
+    F_I_OtherAmount	价格申报项，进口货物运输相关费用总金额	Z(19).Z(2)
+    F_I_OtherNote	价格申报项，进口货物运输相关费用备注	X(255)
+    F_I_InsurPrice	价格申报项，进口货物保险费单位金额	Z(19).Z(4)
+    F_I_InsurAmount	价格申报项，进口货物保险费总金额	Z(19).Z(2)
+    F_I_InsurNote	价格申报项，进口货物保险费备注	X(255)
+    F_E_IsDutyDel	价格申报项，出口关税是否已经从申报价格中扣除	X(1)
+    F_GNameOther	归类申报项，商品其他名称	X(255)
+    F_CodeTsOther	归类申报项，进/出口国地区海关商品编码	X(10)
+    F_IsClassDecision	归类申报项	X(1)
+    F_DecisionNO	归类申报项，预归类决定书编号	X(30)
+    F_CodeTsDecision	归类申报项，预归类决定书商品编码	X(10)
+    F_DecisionCus	归类申报项，作出预归类决定的直属海关	X(4)
+    F_IsSampleTest	归类申报项，该商品是否曾被海关取样化验	X(1)
+    F_GOptions		X(32)
+    F_TrafMode	运输方式	X(1)
+    F_IsDirectTraf	原产地申报项，是否直接运输	X(1)
+    F_TransitCountry	原产地申报项，中转国地区，如果选择非直接运输，必填	X(20)
+    F_DestPort	原产地申报项，到货口岸	X(4)
+    F_DeclPort	原产地申报项，申报口岸	X(4)
+    F_BillNo	原产地申报项，提单编号	X(32)
+    F_OriginCountry	原产地申报项	X(3)
+    F_OriginMark	原产地申报项，原产国地区标记的位置	X(5)
+    F_CertCountry	原产地申报项，原产地证书签发机构及所在国家地区，非参数选项，可录入汉字或字母	X(30)
+    F_CertNO	原产地申报项，原产地证书编号	X(30)
+    F_CertStandard	原产地申报项，适用的原产地标准	X(1)
+    F_OtherNote	公共申报项，其他需要说明的情况	X(1000)
+    F_IsSecret	对以上申报内容是否需要海关予以保密	X(1)
+    F_AgentType	申报单位类型	X(1)
+    F_DeclAddr	申报人单位地址	X(255)
+    F_DeclPost	申报人邮编	X(10)
+    F_DeclTel	申报人电话	X(20)
+
+
+
+EdocRealation 电子随附单据关联关系信息
+    F_EdocID	文件名、随附单据编号（文件名命名规则是：申报口岸+随附单据类别代码+IM+18位流水号+.pdf）	VARCHAR2(64)
+    F_EdocCode	随附单证类别	VARCHAR2(8)         
+    F_EdocFomatType	随附单据格式类型	VARCHAR2(2)
+    F_OpNote	操作说明（重传原因）	VARCHAR2(255)
+    F_EdocCopId	随附单据文件企业名	VARCHAR2(64)
+    F_EdocOwnerCode	所属单位海关编号	VARCHAR2(10)
+    F_SignUnit	签名单位代码	VARCHAR2(10)
+    F_SignTime	签名时间	VARCHAR2(14)
+    F_EdocOwnerName	所属单位名称	VARCHAR2(100)
+    F_EdocSize	随附单据文件大小	VARCHAR2(12)
+
+
+
+ProofOrigin 原产地证明项号关联关系
+    F_CertType	单据类型	VARCHAR2(3)
+    F_DecGNo	报关单商品项号	VARCHAR2(9)         
+    F_EcoCertNo	单据证书号	VARCHAR2(64)
+    F_EcoGNo	原产地证书单证项号	VARCHAR2(9)
+    F_ExtendFiled	扩展字段	VARCHAR2(255)
+
+
+
+SddTax 报税单
+    F_FileName	文件名称	X（18）
+    F_SeqNo	与录入号	X（18）
+    F_IEFlag	进出口标志	X（1）
+    F_DeclPort	申报口岸	X（4）
+    F_DDate	预计申报日期	X（10）
+    F_TradeCo	境内收发货人编号	X（10）
+    F_TradeName	境内收发货人名称	X（70）
+    F_InRatio	内销比率	Z((21,7))
+    F_TradeMode	监管方式	X（4）
+    F_CutMode	征免性质分类	X（3）
+    F_TransMode	成交方式	X（1）
+    F_FeeMark	运费标记	X（1）
+    F_FeeCurr	运费币制	X（3）
+    F_FeeRate	运费／率	Z(21,7)
+    F_InsurMark	保险费标记	X（1）
+    F_InsurCurr	保险费币制	X（3）
+    F_InsurRate	保险费／率	Z(21,7)
+    F_OtherMark	杂费标记	X（1）
+    F_OtherCurr	杂费币制	X（3）
+    F_OtherRate	杂费／率	Z(21,7)
+    F_ManualNo	备案号	X（12）
+    F_TradeCoScc	境内收发货人统一代码	X（18）
+    F_GrossWt	毛重	Z(21,7)
+    F_NoteS	备注	X（255）
+    F_LegalLiability	法律责任	X（255）
+    F_Sign	数字签名信息	X（255）
+    F_MessId	签名消息号	X（255）
+    F_CertSeqNo	签名证书号	X（255）
+    F_Status	状态	X（255）
+
+
+
+SddTaxLists 自报信息表体
+    F_GNo	商品序号	X（9）
+    F_CodeTs	商品编号	X（10）
+    F_GName	商品名称	X（50）
+    F_OriginCountry	产销国	X（3）
+    F_AgreementId	协定编号	X（3）
+    F_Qty1	第一数量	
+    F_Unit1	第一计量单位	X（3）
+    F_Qty2	第二数量	Z(21,7)
+    F_Unit2	第二计量单位	X（3）
+    F_TradeCurr	成交币制	X（3）
+    F_DeclPrice	申报单价	Z(21,7)
+    F_DeclTotal	申报总价	Z(21,7)
+    F_DutyMode	征减免税方式	X（1）
+    F_Antidumping	反倾销涉案	X（1）
+    F_Antisubsidy	反补贴涉案	X（1）
+    F_DutyValue	特案完税价格	Z(21,7)
+    F_DutyRate	关税从价税率	Z(21,7)
+    F_QtyDutyRate	关税从量税率	Z(21,7)
+    F_RegRate	消费税从价税率	Z(21,7)
+    F_QtyRegRate	消费税从量税率	Z(21,7)
+    F_TaxRate	增值税率	Z(21,7)
+    F_AntidumpingRate	反倾销税率	Z(21,7)
+    F_AntisubsidyRate	反补贴税率	Z(21,7)
+    F_TrashfundRate	废弃基金税率	Z(21,7)
+
+
+SddTaxDetails 税费计征结果
+    F_GNo	商品序号	VARCHAR2(9)
+    F_TaxType	税种	VARCHAR2(1)
+    F_RealTax	金额	Z(21,7)
+
+
+
+
+DecRisk 风险评估信息
+    F_Risk	风险评估结果	X(10)
+    F_Sign	数字签名信息	X(201)
+    F_SignDate	处理日期	X(16)
+    F_Note	备注	X(100)
+
+
+
+DecCopPromise 企业承诺信息
+    F_DeclaratioMaterialCode	证明/声明材料代码	VARCHAR2(10)
+
+
+
+DecRoyaltyFee 特许权使用费申请表
+    F_PricePreDeterminNo	价格预裁定编号	VARCHAR2(20)
+    F_TaxRoyaltyDeclType	应税特许权使用费申报情形	VARCHAR2(1)
+    F_ContractNo	合同/协议号	VARCHAR2(500)
+    F_Authorizer	授权方	VARCHAR2(500)
+    F_AuthorizedPerson	被授权方	VARCHAR2(500)
+    F_PayType	支付方式 	VARCHAR2(20)
+    F_PayTime	支付时间	VARCHAR2(10)
+    F_PayPeriod	支付计提周期	NUMBER(2)
+    F_EffectiveDateTime	合同/协议起始执行时间	VARCHAR2(10)
+    F_ExpirationDateTime	合同协议终止时间	DATE
+    F_RoyaltyAmount	特许权使用费金额	NUMBER(19，2)
+    F_Curr	币制	VARCHAR2(3)
+    F_RoyaltyFeeType	特许权使用费类型	VARCHAR2(5)
+    F_EdocType	随附材料清单类型	VARCHAR2(8)
+    F_Statment	说明	VARCHAR2(2500)
+    F_IsSecret	是否保密	VARCHAR2(1)
+    F_IsCusAudit	是否经过海关审核认定	VARCHAR2(1)
+    F_IsCusPricePreDetermin	是否经过海关价格预裁定	VARCHAR2(1)
+    F_IssueDateTime	合同/协议签约时间	VARCHAR2(10)
+    F_PeriodStartDate	本次支付对应的计提周期起始时间	VARCHAR2(10)
+    F_PeriodEndDate	本次支付对应的计提周期终止时间	VARCHAR2(10)
+
+
+
+DecTpAccess 两段准入申请
+    F_TransitionApply 转场申请	VARCHAR2(1)
+    F_TransitionSite	转入场所场地	VARCHAR2(11)
+    F_ConditionalLiftoffApply	附条件提离申请	VARCHAR2(1)
+    F_PortDestMergeCheckApply	口岸与目的地合并检查申请	VARCHAR2(1)
+
+
+
+
+
+CustomsReceipt 报关回执，响应返回内容
+    F_ResponseCode    报关单服务响应代码	VARCHAR2 (10)
+    F_ErrorMessage    报关单服务错误信息	VARCHAR2(255)
+    F_ClientSeqNo 客户端报关单编号	VARCHAR2(18)
+    F_SeqNo   数据中心统一编号	VARCHAR2(18)
+    F_TrnPreId    转关单统一编号	VARCHAR2(18)
+
+
+
+
+
+订单报文头
+    订单业务节点 ceb:Order complexType 是
+    基础报文传输实体节点 ceb:BaseTransfer complexType 是 放置报文传输企业信息。
+    基础回执订阅实体节点 ceb:BaseSubscribe complexType 否 用于第三方提供数据的订阅下发
+    签名节点 ceb:Signature complexType 否 放置报文加业务签信息
+    扩展自定义数据实体节点 ceb:ExtendMessage complexType 否 用于扩展数据实体
+
+
+CC_ORDERHEAD = ow.extend(owModel, {
+    className: "CC_ORDERHEAD",
+    tablename: "CC_ORDERHEAD",
+    primarykey: "F_ID",
+    caption: "订单报文表头",
+    fields: {
+        F_ID:            DEF_ID,
+        F_Order:         { caption: '订单业务节点', owtype: owName, length: 80, required: '*' },
+        F_BaseTransfer:  { caption: '基础报文传输实体节点', owtype: owName, length: 80, required: '*' },
+        F_BaseSubscribe: { caption: '基础回执订阅实体节点', owtype: owName, length: 80 },
+        F_Signature:     { caption: '签名节点', owtype: owName, length: 80 },
+        F_ExtendMessage: { caption: '扩展自定义数据实体节点', owtype: owName, length: 80 },
+
+        F_CREATEID:      { caption: '创建人ID', owtype: owCode, defaultValue: ":C_USERID", hide: true },
+        F_CREATE:        { caption: '创建人', owtype: owName, length: 80, defaultValue: ":C_USERNAME", readOnly: true },
+        F_CREATEDATE:    { caption: '创建时间', owtype: owDateTime, defaultValue: ':now', readOnly: true },
+        F_REMARK:        { caption: "备注", owtype: BD_REMARK },
+        F_STATUS:        { caption: '是否启用', owtype: owBoolean, dict: 'C_ACT_BOOLEAN', defaultValue: '0' },
+        F_LASTMODIFY:	 DEF_LASTMODIFY,
+    }
+});
